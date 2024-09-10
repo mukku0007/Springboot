@@ -1,0 +1,11 @@
+package com.banking.model;
+
+public class Account {
+
+	private Long id;
+	
+	private String accountHolderName;
+	
+	private double balance;
+	
+}

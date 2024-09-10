@@ -1,0 +1,8 @@
+package com.dependency_injection.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Constructor_Injection_Controller {
+
+}

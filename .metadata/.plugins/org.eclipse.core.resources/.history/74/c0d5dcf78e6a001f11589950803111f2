@@ -1,0 +1,6 @@
+package com.dependency_injection.controller;
+
+public class Field_Injection_Controller {
+
+	
+}

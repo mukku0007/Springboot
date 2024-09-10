@@ -1,0 +1,14 @@
+package com.swagger.constant;
+
+public class Constants {
+
+	public static final String RESPONSE_STATUS = "status";
+	public static final String RESPONSE_STATUS_FAILED = "failed";
+	public static final String RESPONSE_STATUS_SUCCESS = "success";
+	public static final String RESPONSE_DATA = "data";
+	public static final String RETURN_COUNT = "count";
+	public static final String RESPONSE_MSG = "msg";
+	
+	public static final String ERROR_CODE_ERRDBS_1453 = "ERRDBS1453";
+	public static final String ERROR_MSG_1453 = "supplied field value is invalid.";
+}

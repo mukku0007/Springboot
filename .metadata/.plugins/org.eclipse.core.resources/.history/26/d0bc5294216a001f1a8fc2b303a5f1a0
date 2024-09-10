@@ -1,0 +1,19 @@
+package com.file_storage.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.file_storage.model.FileItem;
+
+@RestController
+@RequestMapping("/file")
+public class FileController {
+
+	@PostMapping
+	public ResponseEntity<Object> uploadFIle(@RequestBody FileItem fileItem) {
+		
+	}
+}

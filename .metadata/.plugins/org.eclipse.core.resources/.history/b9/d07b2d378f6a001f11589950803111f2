@@ -1,0 +1,5 @@
+package com.dependency_injection.service;
+
+public class HomeService {
+
+}

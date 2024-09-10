@@ -1,0 +1,5 @@
+package com.swagger.exception;
+
+public class ValidationException {
+
+}

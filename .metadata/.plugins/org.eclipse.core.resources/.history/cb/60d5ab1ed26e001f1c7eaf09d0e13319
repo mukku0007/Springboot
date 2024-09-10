@@ -1,0 +1,13 @@
+package com.swagger.model;
+
+import lombok.Data;
+
+@Data
+public class Student {
+
+	 protected Integer id;
+	 protected String name;
+	 protected String email;
+	 protected String city;
+	 protected Integer age;
+}

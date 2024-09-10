@@ -1,0 +1,76 @@
+package com.swagger.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.swagger.Entity.StudentEntity;
+import com.swagger.model.Student;
+import com.swagger.repository.StudentRepository;
+
+import io.micrometer.common.util.StringUtils;
+import lombok.RequiredArgsConstructor;
+
+@Service
+
+@RequiredArgsConstructor
+public class StudentService {
+
+	private final StudentRepository studentRepository;
+
+	public void saveStudent(Student student) {
+		
+		validateStudentForCreate(student);
+		
+		//Initialize the StudentEntity list
+		StudentEntity studentEntity = new StudentEntity();
+		studentEntity.setId(student.getId());
+		studentEntity.setName(student.getName());
+		studentEntity.setEmail(student.getEmail());
+		studentEntity.setCity(student.getCity());
+		studentEntity.setAge(student.getAge());
+		
+		studentRepository.save(student);
+	}
+
+	private void validateStudentForCreate(Student student) {
+		if(StringUtils.isBlank(student.getName())) {
+			
+		}
+		
+	}
+
+	public Optional<List<StudentEntity>> getAllStudent() {
+		return Optional.of(studentRepository.findAll());
+	}
+
+	public Optional<StudentEntity> getStudentById(Integer id) {
+		return studentRepository.findById(id);
+
+	}
+
+	public boolean existsById(Integer id) {
+		return studentRepository.existsById(id);
+	}
+
+	public void deleteStudentById(Integer id) {
+		studentRepository.deleteById(id);
+	}
+
+	public void deleteAllStudents() {
+		studentRepository.deleteAll();
+	}
+
+	public List<StudentEntity> findByCity(String city) {
+		return studentRepository.findByCity(city);
+	}
+
+	public List<StudentEntity> findByAge(Integer age) {
+		return studentRepository.findByAge(age);
+	}
+
+	public List<StudentEntity> findByName(String name) {
+		return studentRepository.findByName(name);
+	}
+}

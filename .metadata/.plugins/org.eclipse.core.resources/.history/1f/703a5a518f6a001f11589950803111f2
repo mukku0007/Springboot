@@ -1,0 +1,9 @@
+package com.dependency_injection.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Field_Injection_Controller {
+
+	
+}

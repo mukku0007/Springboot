@@ -1,0 +1,13 @@
+package com.dependency_injection.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.dependency_injection.service.HomeService;
+
+
+@RestController
+public class Setter_Injection_Controller {
+
+	
+	private HomeService homeService;
+}

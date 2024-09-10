@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Student Form</title>
+<meta htt-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<!-- Bootstrap -->
+<!-- Latest compiled and manifest CSS -->
+
+<link rel = "stylesheet"
+	  href="https:stackpath.boots">
+</head>
+<body>
+
+</body>
+</html>

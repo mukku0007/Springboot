@@ -1,0 +1,11 @@
+package com.file_storage.model;
+
+public class FileItem {
+
+	private Integer id;
+	private String fileName;
+	private String fileType;
+	private String fileLocation;
+	
+	
+}

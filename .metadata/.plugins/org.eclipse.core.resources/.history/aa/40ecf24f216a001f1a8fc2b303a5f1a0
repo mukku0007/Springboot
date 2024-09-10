@@ -1,0 +1,5 @@
+package com.file_storage.repository;
+
+public interface FileRepository {
+
+}

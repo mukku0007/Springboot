@@ -1,0 +1,22 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.hibernate.org/xsd/orm/cfg"
+           targetNamespace="http://www.hibernate.org/xsd/orm/cfg"
+           elementFormDefault="qualified"
+           version="4.0">
+	
+
+<hibernate-configuration>
+	<session-factory>
+		
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root@123</property>
+		
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show sql">true</property>
+		
+		<mapping class="com.hibernate.entities.Employee"></mapping>
+		
+	</session-factory>
+</hibernate-configuration>	

@@ -1,0 +1,17 @@
+package com.swagger.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Student {
+
+	 protected Integer id;
+	 protected String name;
+	 protected String email;
+	 protected String city;
+	 protected Integer age;
+}

@@ -1,0 +1,26 @@
+package com.swagger.exception;
+
+public class ValidationException extends Exception {
+
+	private static final long serialVersionUID = 1L;
+
+	private String validationMsg;
+	private String errorCode;
+	public String getValidationMsg() {
+		return validationMsg;
+	}
+	public void setValidationMsg(String validationMsg) {
+		this.validationMsg = validationMsg;
+	}
+	public String getErrorCode() {
+		return errorCode;
+	}
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+	public ValidationException(String validationMsg, String errorCode) {
+		super();
+		this.validationMsg = validationMsg;
+		this.errorCode = errorCode;
+	}
+}

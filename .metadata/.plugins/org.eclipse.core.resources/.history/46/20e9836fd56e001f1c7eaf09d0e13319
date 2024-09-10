@@ -1,0 +1,17 @@
+package com.swagger.response;
+
+import com.swagger.Entity.StudentEntity;
+
+public class StudentResp extends BaseResponse {
+
+	protected StudentEntity student;
+
+	public StudentEntity getStudent() {
+		return student;
+	}
+
+	public void setStudent(StudentEntity student) {
+		this.student = student;
+	}
+
+}

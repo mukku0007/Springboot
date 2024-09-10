@@ -1,0 +1,5 @@
+package com.file_storage.model;
+
+public class FileItem {
+
+}

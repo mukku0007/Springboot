@@ -1,0 +1,21 @@
+package com.jwt.model;
+
+public class JwtResponse {
+
+	private String username;
+	private String jwtToken;
+	
+	public JwtResponse() {
+		super();
+	}
+	
+	public JwtResponse(String username, String jwtToken) {
+		super();
+		this.username = username;
+		this.jwtToken = jwtToken;
+	}
+	
+	
+	
+	
+}

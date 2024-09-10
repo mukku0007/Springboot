@@ -1,0 +1,25 @@
+package com.jwt.config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.ldap.embedded.EmbeddedLdapProperties.Credential;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+import com.jwt.jwt_autentication.JwtAuthenticationEntryPoint;
+
+@Configuration
+public class SecurityFilterConfig {
+
+	@Autowired
+	private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+	
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity httpSecurity) {
+		return httpSecurity.csrf(csrf-> csrf.disable())
+				.cors(cors-> cors.disable())
+				.authorizeHttpRequests(auth -> auth.requestMatchers("/autenticate").permitAll()
+				.anyRequest().authenticated())
+	}
+}

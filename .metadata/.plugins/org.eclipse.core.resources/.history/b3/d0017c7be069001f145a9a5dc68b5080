@@ -1,0 +1,19 @@
+package com.jwt.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import org.springframework.stereotype.Service;
+
+import com.jwt.student.Student;
+
+@Service
+public class StudentService {
+
+	private List<Student> studentList = new ArrayList<>();
+	
+	public StudentService() {
+		studentList.add(101, "Mukesh", "mukesh@gamil.com"));
+	}
+}

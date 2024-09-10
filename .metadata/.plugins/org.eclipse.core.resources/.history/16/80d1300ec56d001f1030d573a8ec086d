@@ -1,0 +1,26 @@
+package com.banking.service.impl;
+
+import com.banking.entity.AccountEntity;
+import com.banking.mapper.AccountMapper;
+import com.banking.model.Account;
+import com.banking.repository.AccountRepository;
+import com.banking.service.AccountService;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class AccountServiceImpl implements AccountService {
+
+	private AccountRepository accountRepository;
+
+	@Override
+	public Account createAccount(Account account) {
+
+		AccountEntity accountEntity = AccountMapper.mapToAccountEntity(account);
+		AccountEntity savedAccount = accountRepository.save(accountEntity);
+
+		return AccountMapper.mapToAccount(savedAccount);
+
+	}
+
+}

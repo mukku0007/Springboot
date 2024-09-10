@@ -1,0 +1,40 @@
+package com.swagger.exception;
+
+public class DatabaseException extends Exception {
+
+	private static final long serialVersionUID = 1L;
+	private String errorMsg;
+	private String errorCode;
+
+	public String getErrorMsg() {
+		return errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
+
+	public String getErrorCode() {
+		return errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	@Override
+	public String toString() {
+		return "DatabaseException [errorMsg=" + errorMsg + ", errorCode=" + errorCode + "]";
+	}
+
+	public DatabaseException(String errorMsg, String errorCode) {
+		super();
+		this.errorMsg = errorMsg;
+		this.errorCode = errorCode;
+	}
+
+}

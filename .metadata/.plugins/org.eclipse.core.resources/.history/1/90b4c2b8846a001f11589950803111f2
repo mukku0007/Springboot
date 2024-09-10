@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Student Form</title>
+<meta htt-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Bootstrap -->
+<!-- Latest compiled and manifest CSS -->
+
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+	integrity="sha384-HSMXCRTRXnN+Bdg0JdbxYKrThecOKUH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+	integrity="sha512-xh60/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9 BmamE+4aHK8yyUHUSCcJHgXLoTyT2A=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+	integrity="sha384-aJ210jLMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+	crossorigin="anonymous">
+</script>
+
+</head>
+
+<body th:class="container">
+<h2 style="color: white; background-color: black">Student Validation Form</h2>
+<section>
+	<div class="studentList">
+		<th th: if="${message != ''}">
+			<div class="alert alert-success" role="alert">
+				<span th:text="${message}"></span>
+			</div>
+		</th>
+			<h3>Student List</h3>
+			<form class="form-horizontal" role="form" th: action="@{/update}" th:object="${studentList}" method="POST">
+				<table class="table table-bordered table-striped" id="todoItems">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>City</th>
+							<th>Age</th>
+							<th>Email</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th: each "stud, istudentList}">
+							<input type="hidden" th:field="*{studentList[__${i.index}__].id}" />
+							<td th:text="${stud.name}"></td>
+							<td th:text="${stud.city}">
+							<td th:text="${stud.age}"></td>
+							<td th:text="${stud.email}"></td>
+							<td><a th:href="@{/delete (id = ${stud.id})}"
+								title="Delete Student"
+								class="fa-regular fa-trash-can icon-dark btn-delete"></a> <a
+								th:href="@/edit (id=${stud.id})}" title="Delete Student"
+								class="fa-regular fa-edit icon-dark"></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+		<hr/>
+
+
+		<div class="studentForm">
+			<h3>Student Form</h3>
+			<form class="form-horizontal" role="form" th:action="@{/save}" th:object="${student" method="POST">
+				<br> <br>
+				<input type="hidden" th:field="${student.id}" name="id" />
+				<div class="form-group" th:class="all-classes-container">
+					<label for="name" class="col-sm-2">Name</label>
+					<div class="col-sm-10">
+						 <input type="text" th: field="{name}" class="form-control" id="name" placeholder="Enter Student Name" />
+						<p th:if="${#fields. hasErrors ('name')}" class="label label-danger" th: errors="+{name}"></p>
+					</div>
+				</div>
+				
+				<div class="form-group" th:class="all-classes-container">
+					<label for="city" class="col-sm-2">City</label>
+					<div class="col-sm-10">
+						<input type="text" th: field="{city}" class="form-control" id="city" placeholder="Enter Student City" />
+						<p th:if="${#fields. hasErrors('city')}"class="label label-danger" th:errors="*{city}"></p>
+					</div>
+				</div>
+
+				<div class="form-group" th:class="all-classes-container">
+					<label for="email" class="col-sm-2">Email</label>
+					<div class="col-sm-10">
+						<input type="email" th: field="{email}" class="form-control" id="email" placeholder="Enter Student Email" />
+						<p th:if="${#fields. hasErrors ('email')}" class="label label-danger" th: errors="{email}"></p>
+					</div>
+				</div>
+				
+				<div class="form-group" th:class="all-classes-container">
+					<label for="age" class="col-sm-2">Age</label>
+					<div class="col-sm-10">
+						<input type="number" th: field="*{age}" class="form-control" id="age" placeholder="Enter Student Age" />
+						<p th:if="${#fields. hasErrors ('age')}" class="label label-danger" th: errors="*{age}"></p>
+					</div>
+				</div>
+				
+				
+				<button type = "submit" class="btn btn-primary">Add Student</button>
+</section>
+
+</body>
+</html>

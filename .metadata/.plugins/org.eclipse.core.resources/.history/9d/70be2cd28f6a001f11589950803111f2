@@ -1,0 +1,5 @@
+package com.dependency_injection.controller;
+
+public class Setter_Injection_Controller {
+
+}

@@ -1,0 +1,5 @@
+package com.swagger.model;
+
+public class Student {
+
+}

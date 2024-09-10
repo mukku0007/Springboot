@@ -1,0 +1,10 @@
+package com.banking.mapper;
+
+import com.banking.entity.AccountEntity;
+
+public class AccountMapper {
+
+	public static AccountEntity mapToAccountEntity(Account account) {
+		
+	}
+}

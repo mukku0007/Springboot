@@ -1,0 +1,25 @@
+package com.swagger.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.swagger.Entity.StudentEntity;
+import com.swagger.model.Student;
+
+import jakarta.transaction.Transactional;
+
+public interface StudentRepository extends JpaRepository<StudentEntity, Integer> {
+
+	@Transactional
+	List<StudentEntity> findByCity(String city);
+
+	@Transactional
+	List<StudentEntity> findByAge(Integer age);
+	
+	@Transactional
+	List<StudentEntity> findByName(String name);
+
+	void save(Student student);
+
+}
